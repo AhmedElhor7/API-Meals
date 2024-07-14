@@ -1,0 +1,157 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #0D0D0D;
+}
+
+/* Satrt Loader  */
+.loader {
+  transform: rotateZ(45deg);
+  perspective: 1000px;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  color: #fff;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  transform: rotateX(70deg);
+  animation: 1s spin linear infinite;
+}
+.loader:after {
+  color: #ff3d00;
+  transform: rotateY(70deg);
+  animation-delay: 0.4s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+}
+
+@keyframes rotateccw {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes spin {
+  0%,
+  100% {
+    box-shadow: 0.2em 0px 0 0px currentcolor;
+  }
+  12% {
+    box-shadow: 0.2em 0.2em 0 0 currentcolor;
+  }
+  25% {
+    box-shadow: 0 0.2em 0 0px currentcolor;
+  }
+  37% {
+    box-shadow: -0.2em 0.2em 0 0 currentcolor;
+  }
+  50% {
+    box-shadow: -0.2em 0 0 0 currentcolor;
+  }
+  62% {
+    box-shadow: -0.2em -0.2em 0 0 currentcolor;
+  }
+  75% {
+    box-shadow: 0px -0.2em 0 0 currentcolor;
+  }
+  87% {
+    box-shadow: 0.2em -0.2em 0 0 currentcolor;
+  }
+}
+/* End Loader  */
+
+/* Satrt Nav  */
+nav i , nav ul li {
+  cursor: pointer;
+}
+
+nav .nav-hide {
+  position: fixed;
+  left: -250px;
+  background-color: #0D0D0D;
+  color: #f9f6f6;
+}
+nav .nav-hide ul li {
+  position: relative;
+  top: 300px;
+}
+nav .nav-show {
+  position: fixed;
+  left: 0px;
+}
+nav .nav-show .nav-img img {
+  width: 50px;
+}
+
+/* End Nav */
+
+/* Start Main Seaction */
+.containerMeals , .container-categories {
+  cursor: pointer;
+}
+.text-slideup {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: .5s  all;
+}
+.text-slideup span {
+  display: none;
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+.containerMeals:hover .text-slideup , .container-categories:hover .text-slideup  {
+top: 0;
+background-color: #f9f6f6ca;
+
+}
+.containerMeals:hover span , .container-categories:hover span {
+  display: block;
+}
+.home-country {
+  font-size: 4rem;
+}
+/* End Main Seaction */
+
+/* Start Section Meal Deatils */
+.meal-details {
+  line-height: 2; 
+  padding-left: 2rem; 
+}
+#closeIcone {
+  cursor: pointer;
+}
+.meal-details p {
+  line-height: 2; 
+}
+.meal-details h4#recipes ~ .meal-recipes span {
+  margin-bottom: 1rem;
+  margin-left: 0.5rem;
+}
+
+#smallText {
+  font-size: small;
+}
+/* End Secation Meal Deatils */
+
+

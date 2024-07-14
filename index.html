@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meals</title>
+    <link
+      rel="stylesheet"
+      href="bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style/all.min.css" />
+    <link rel="stylesheet" href="style/Style.css" />
+  </head>
+  <body>
+    <!-- Satrt Loader -->
+    <div
+      class="vh-100 d-flex justify-content-center align-items-center d-none"
+      id="coverLoader"
+    >
+      <span class="loader"></span>
+    </div>
+
+    <!-- End Loader -->
+    <!-- Satrt Nav Bar -->
+
+    <nav>
+      <div
+        class="nav-hide z-3 d-flex flex-column justify-content-between p-4 position-fixed vh-100"
+      >
+        <div class="nav-links pt-3">
+          <ul class="list-unstyled lh-lg">
+            <li id="home">
+              <a href="#" class="text-decoration-none text-reset">Home</a>
+            </li>
+            <li id="search">
+              <a href="#" class="text-decoration-none text-reset">Search</a>
+            </li>
+            <li id="categories">
+              <a href="#" class="text-decoration-none text-reset">Categories</a>
+            </li>
+            <li id="area">
+              <a href="#" class="text-decoration-none text-reset">Area</a>
+            </li>
+            <li id="ingredients">
+              <a href="#" class="text-decoration-none text-reset"
+                >Ingredients</a
+              >
+            </li>
+            <li id="contact">
+              <a href="#" class="text-decoration-none text-reset">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        <footer>
+          <div class="nav-footer">
+            <div class="icons pb-2">
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-x-twitter"></i>
+              <i class="fa-solid fa-globe"></i>
+            </div>
+            <div class="nav-text pb-3">
+              <p class="m-0">Copyright Â© 2019 All Rights</p>
+              <span>Reserved.</span>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <div
+        class="nav-show z-3 bg-white text-black vh-100 p-3 d-flex flex-column justify-content-between align-items-center"
+      >
+        <div class="nav-img">
+          <img src="imges/wraper.png" alt="" />
+        </div>
+        <div class="nav-switch">
+          <i id="switch" class="fa-solid fa-bars fs-1"></i>
+          <i id="close" class="fa-solid fa-xmark fs-1 d-none"></i>
+        </div>
+        <div class="nav-share pb-4 fs-5">
+          <i class="fa-solid fa-globe d-block pb-2"></i>
+          <i class="fa-solid fa-share"></i>
+        </div>
+      </div>
+    </nav>
+
+    <!-- End Nav Bar -->
+    <!-- Satrt Search section -->
+
+    <section id="searchContainer" class="d-none">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 pt-3">
+            <div class="input-group input-group-sm mb-3">
+              <input
+                type="text"
+                class="form-control bg-transparent text-white"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm"
+                placeholder="Search By Name"
+                id="searchName"
+              />
+            </div>
+          </div>
+          <div class="col-md-6 pt-3">
+            <div class="input-group input-group-sm mb-3">
+              <input
+                type="text"
+                class="form-control bg-transparent text-white"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm"
+                placeholder="Search By First Letter"
+                id="searchFirstLetter"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- End Search section -->
+
+    <section id="meals">
+      <div class="container">
+        <div class="row py-5 g4" id="containerAllMeals"></div>
+      </div>
+    </section>
+
+    <!-- Start Mead Deatails Section -->
+
+    <section id="mealDetails" class="text-white text-md-start d-none">
+      <div class="container">
+        <div class="row" id="rowOfmealDeatils"></div>
+      </div>
+    </section>
+
+    <!-- End Mead Deatails Section -->
+
+    <!-- Start Form Section -->
+
+    <section
+      id="contactUsContainer"
+      class="d-none min-vh-100 d-flex justify-content-center align-items-center"
+    >
+      <div class="container w-50">
+        <div class="row">
+          <div class="col-md-6 pt-3">
+            <div class="input-group input-group-sm mb-3">
+              <input
+                type="text"
+                class="form-control bg-transparent text-white"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm"
+                placeholder="Enter Your Name"
+                id="inputName"
+              />
+            </div>
+            <span class="py-1 text-danger d-none" id="messageNameValid"
+              >Special characters and numbers not allowed</span
+            >
+          </div>
+          <div class="col-md-6 pt-3">
+            <div class="input-group input-group-sm mb-3">
+              <input
+                type="text"
+                class="form-control bg-transparent text-white"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm"
+                placeholder="Enter Your Email"
+                id="inputEmail"
+              />
+            </div>
+            <span class="py-1 text-danger d-none" id="messageEmailValid"
+              >Email not valid *example@yyy.zzz</span
+            >
+          </div>
+          <div class="col-md-6 pt-3">
+            <div class="input-group input-group-sm mb-3">
+              <input
+                type="text"
+                class="form-control bg-transparent text-white"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm"
+                placeholder="Enter Your Phone"
+                id="inputPhone"
+              />
+            </div>
+            <span class="py-1 text-danger d-none" id="messagePhoneValid"
+              >Enter valid Phone Number</span
+            >
+          </div>
+          <div class="col-md-6 pt-3">
+            <div class="input-group input-group-sm mb-3">
+              <input
+                type="number"
+                class="form-control bg-transparent text-white"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm"
+                placeholder="Enter Your Age"
+                id="inputAge"
+                min="6"
+                max="120"
+              />
+            </div>
+            <span class="py-1 text-danger d-none" id="messageAgeValid"
+              >Enter valid age</span
+            >
+          </div>
+          <div class="col-md-6 pt-3">
+            <div class="input-group input-group-sm mb-3">
+              <input
+                type="password"
+                class="form-control bg-transparent text-white"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm"
+                placeholder="Enter Your password"
+                id="inputPassword"
+              />
+            </div>
+            <span class="py-1 text-danger d-none" id="messagePasswordValid"
+              >Enter valid password *Minimum eight characters, at least one
+              letter and one number and accepts special characters like @, . and
+              others</span
+            >
+          </div>
+          <div class="col-md-6 pt-3">
+            <div class="input-group input-group-sm mb-3">
+              <input
+                type="password"
+                class="form-control bg-transparent text-white"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm"
+                placeholder="Enter Your Repassword"
+                id="inputRePassword"
+              />
+            </div>
+            <span class="py-1 text-danger d-none" id="messageRePasswordValid"
+              >Enter valid repassword</span
+            >
+          </div>
+          <div class="d-grid gap-2 col-6 mx-auto pt-3">
+            <button class="btn btn-outline-danger" type="button" id="submitBtn">
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- End Form Section -->
+
+    <script src="bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
